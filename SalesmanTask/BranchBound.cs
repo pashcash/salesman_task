@@ -176,13 +176,9 @@ class BranchBound
 		TSPRec(adj, curr_bound, 0, 1, curr_path);
 	}
 
-    public void GetResult(int[, ] adj)
+    public Tuple<int, int[]> GetResult(int[, ] adj)
     {
         TSP(adj);
-        Console.WriteLine("Minimum cost : " + final_res);
-		Console.Write("Path Taken : ");
-		for (int i = 0; i <= N; i++) {
-			Console.Write(final_path[i] + " ");
-		}
+		return new Tuple<int, int[]>(final_res, final_path);
     }
 }
